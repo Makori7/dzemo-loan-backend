@@ -1,0 +1,26 @@
+[
+  {
+    "classCode": "700",
+    "className": "Gl Collection",
+    "accountLimit": 10000000,
+    "allowNegatives": true,
+    "transactionLimit": 10000000,
+    "currency": "KES"
+  },
+  {
+    "classCode": "200",
+    "className": "Customer Account",
+    "accountLimit": 10000000,
+    "allowNegatives": false,
+    "transactionLimit": 10000000,
+    "currency": "KES"
+  },
+  {
+    "classCode": "205",
+    "className": "Loan Account",
+    "accountLimit": 10000000,
+    "allowNegatives": true,
+    "transactionLimit": 10000000,
+    "currency": "KES"
+  }
+]

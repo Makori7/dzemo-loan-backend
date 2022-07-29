@@ -1,0 +1,18 @@
+[
+  {
+    "firstName": "Pascal",
+    "lastName": "Makori",
+    "phoneNumber": "254700000001",
+    "active": true,
+    "nationalId": "83749384",
+    "accounts": []
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "254700000002",
+    "active": true,
+    "nationalId": "83749385",
+    "accounts": []
+  }
+]

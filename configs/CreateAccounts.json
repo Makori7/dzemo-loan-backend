@@ -1,0 +1,28 @@
+[
+  {
+    "customer": {
+      "id": 1
+    },
+    "accountNumber": "100000001",
+    "actualBalance": 50000,
+    "availableBalance": 50000,
+    "blocked": false,
+    "mobileNumber": "254700000001",
+    "accountClass": {
+      "id": 2
+    }
+  },
+  {
+    "customer": {
+      "id": 1
+    },
+    "accountNumber": "100000002",
+    "actualBalance": 50000,
+    "availableBalance": 50000,
+    "blocked": false,
+    "mobileNumber": "254700000002",
+    "accountClass": {
+      "id": 2
+    }
+  }
+]
