@@ -4,7 +4,7 @@ import loan.application.co.dzemoloanbackend.entity.Customer;
 import loan.application.co.dzemoloanbackend.services.CrudOperation;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CustomerRepository extends CrudRepository<Customer,Long> {
+public interface CustomerRepository extends CrudRepository<Customer,Integer> {
 
 
 }
