@@ -23,9 +23,9 @@ public class BaseEntity {
     @PrePersist
     public void addData() {
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
-        ZoneId zoneId = ZoneId.of("Africa/Lusaka");
-        ZonedDateTime lusaka = zonedDateTime.withZoneSameInstant(zoneId);
-        this.createdOn = lusaka.toLocalDateTime();
+        ZoneId zoneId = ZoneId.of("Africa/Nairobi");
+        ZonedDateTime Nairobi = zonedDateTime.withZoneSameInstant(zoneId);
+        this.createdOn = Nairobi.toLocalDateTime();
         this.softDelete = false;
     }
 }
