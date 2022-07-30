@@ -35,11 +35,12 @@ public class LoadConfiguration {
     @Resource
     Environment environment;
 
-  //  @PostConstruct
+   // @PostConstruct
     public void init(){
         createAccountClass();
         createCustomers();
-        createCustomers();
+        createCustomerAccounts();
+
     }
 
     public void createAccountClass(){

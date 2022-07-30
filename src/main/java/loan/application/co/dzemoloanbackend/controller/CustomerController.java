@@ -21,4 +21,16 @@ public class CustomerController {
 
         return customerService.getCustomerData(phoneNumber);
     }
+
+    @GetMapping("/get-customer-balance/{account}")
+    public UniversalResponseWrapper getCustomerbalance(@PathVariable String account){
+
+        return customerService.getCustomerData(account);
+    }
+
+    @PostMapping("/do-customer-transaction")
+    public UniversalResponseWrapper getCustomerbalance(@RequestBody Customer customer){
+
+        return null;
+    }
 }

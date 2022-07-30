@@ -2,9 +2,13 @@ package loan.application.co.dzemoloanbackend.services;
 
 import loan.application.co.dzemoloanbackend.entity.Account;
 import loan.application.co.dzemoloanbackend.entity.Transaction;
+import loan.application.co.dzemoloanbackend.wrapper.FetchWrapper;
 import loan.application.co.dzemoloanbackend.wrapper.RequestWrapper;
 import loan.application.co.dzemoloanbackend.wrapper.UniversalResponseWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -55,6 +59,16 @@ public class TransactionServiceImpl implements TransactionService {
         if (toAccount == null) return new UniversalResponseWrapper(500, "credit acocunt not found");
 
         return ProcessTransaction(requestWrapper, fromAccount, toAccount);
+    }
+
+    @Override
+    public UniversalResponseWrapper fetchTransactionHistory(FetchWrapper fetchWrapper) {
+
+        Pageable pageable = PageRequest.of(fetchWrapper.getPage(), fetchWrapper.getSize(), Sort.by(Sort.Direction.ASC,"id"));
+
+        return new UniversalResponseWrapper(200, "data retrieved successfully",
+                crudOperation.fetchAllTransactions(fetchWrapper.getFrom().atStartOfDay()
+                        ,fetchWrapper.getTo().atStartOfDay(),fetchWrapper.getAccountNumber(),pageable));
     }
 
     private UniversalResponseWrapper ProcessTransaction(RequestWrapper requestWrapper, Account fromAccount, Account toAccount) {

@@ -28,6 +28,7 @@ public class Account extends BaseEntity{
     @PrePersist
     void createAccountNumber(){
 
-        this.accountNumber = String.valueOf(100000000+getId());
+        System.out.println("getId()"+getId());
+        this.accountNumber = String.valueOf(System.currentTimeMillis());
     }
 }

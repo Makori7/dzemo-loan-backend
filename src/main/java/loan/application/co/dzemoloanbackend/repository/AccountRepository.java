@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 
-public interface AccountRepository extends CrudRepository<Account, Integer> {
+public interface AccountRepository extends CrudRepository<Account, Long> {
     Optional<Account> findFirstByMobileNumber(String mobileNumber);
     Optional<Account> findFirstByAccountNumber(String accountNumber);
 }

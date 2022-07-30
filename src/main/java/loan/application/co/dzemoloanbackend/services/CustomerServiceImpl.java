@@ -24,6 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
             //create account
             Account customerAccount = new Account();
             customerAccount.setCustomer(newCustomer);
+            customerAccount.setMobileNumber(newCustomer.getPhoneNumber());
 
             Account createdAccount = crudOperation.createAccount(customerAccount);
 

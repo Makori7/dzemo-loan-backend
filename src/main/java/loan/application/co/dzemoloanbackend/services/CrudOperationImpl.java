@@ -9,8 +9,11 @@ import loan.application.co.dzemoloanbackend.repository.AccountRepository;
 import loan.application.co.dzemoloanbackend.repository.CustomerRepository;
 import loan.application.co.dzemoloanbackend.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -53,5 +56,10 @@ public class CrudOperationImpl implements CrudOperation {
     @Override
     public List<Account> updateCustomerBalances(List<Account> accounts) {
         return (List<Account>) accountRepository.saveAll(accounts);
+    }
+
+    @Override
+    public Page<Transaction> fetchAllTransactions(LocalDateTime from, LocalDateTime to, String accountNumber, Pageable pageable) {
+        return transactionRepository.findAllByCreatedOnGreaterThanAndCreatedOnLessThanAndAccountNumber(from, to, accountNumber, pageable);
     }
 }
